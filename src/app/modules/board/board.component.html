@@ -1,0 +1,12 @@
+<header>
+  <h3>Board</h3>
+</header>
+<div #board>
+  <table *ngIf="boardValues && boardValues.length > 0">
+    <tr *ngFor="let row of boardValues">
+      <td *ngFor="let value of row">
+        {{value}}
+      </td>
+    </tr>
+  </table>
+</div>

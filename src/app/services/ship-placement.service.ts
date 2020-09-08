@@ -95,7 +95,7 @@ export class ShipPlacementService {
 
   private checkVerticalVacancy(coordinate: Coordinate, xEnd: number, board: Board): boolean {
     let result = false;
-    for (let xIndex = coordinate.rowIndex; xIndex < xEnd; xIndex++) {
+    for (let xIndex = coordinate.rowIndex; xIndex <= xEnd; xIndex++) {
         if (board.Values[xIndex][coordinate.columnIndex] === Constants.Empty) {
           result = true;
         } else {
@@ -108,7 +108,7 @@ export class ShipPlacementService {
 
   private checkHorizontalVacancy(coordinate: Coordinate, yEnd: number, board: Board): boolean {
     let result = false;
-    for (let yIndex = coordinate.columnIndex; yIndex < yEnd; yIndex++) {
+    for (let yIndex = coordinate.columnIndex; yIndex <= yEnd; yIndex++) {
         if (board.Values[coordinate.rowIndex][yIndex] === Constants.Empty) {
           result = true;
         } else {

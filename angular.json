@@ -121,8 +121,16 @@
               "devServerTarget": "battleship:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "battleship"
+    }
+  },
+  "defaultProject": "battleship",
+  "cli": {
+    "analytics": "8664f280-c121-4e71-b738-5ce20d010594"
+  }
 }

@@ -1,18 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BoardComponent } from './modules/board/board.component';
+import { GameComponent } from './modules/game/game.component';
+import { FormsModule } from '@angular/forms';
+import { GameEngineService } from './services/game-engine.service';
+import { ShipPlacementService } from './services/ship-placement.service';
+import { ResultService } from './services/result.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [GameEngineService, ShipPlacementService, ResultService]
 })
 export class AppModule { }

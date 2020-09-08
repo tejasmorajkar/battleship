@@ -1,0 +1,42 @@
+<div class="container">
+  <header>
+    <h1>Battleship</h1>
+  </header>
+  <form #form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2">Enter coordinate</label>
+      <input #txtcoordinate="ngModel" [(ngModel)]="coordinate" name="txtcoordinate" class="col-sm-2" required
+        minlength="2" maxlength="3" pattern="^[A-J][1-9][0]?" />
+      <span *ngIf="txtcoordinate.invalid && (txtcoordinate.dirty || txtcoordinate.touched)" class="alert alert-danger ml-2 mr-2 px-2">
+        <span class="mx-2 px-2" *ngIf="txtcoordinate.errors.required">Coordinate is required.</span>
+        <span class="mx-2 px-2" *ngIf="txtcoordinate.errors.minlength">Coordinate must be at least 2 characters long.</span>
+        <span class="mx-2 px-2" *ngIf="txtcoordinate.errors.maxlength">Coordinate can be max 3 characters long.</span>
+        <span class="mx-2 px-2" *ngIf="txtcoordinate.errors.pattern">Incorrect Coordinate</span>
+      </span>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Current Shot Result</label>
+      <span class="col-sm-2 text-left">{{shot}}</span>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Shots History</label>
+      <span class="col-sm-10 text-left">{{history.join(',')}}</span>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Game Status</label>
+      <span class="col-sm-2 text-left">{{gameStatus}}</span>
+    </div>
+    <div class="form-group pl-2">
+      <button type="button" class="btn btn-primary mx-2" (click)="onShootClick()">
+        Shoot
+      </button>
+      <button type="button" class="btn btn-space btn-danger mx-2" (click)="onLoseClick()">
+        I lose
+      </button>
+      <button type="reset" class="btn btn-space btn-warning mx-2" (click)="onResetClick()">
+        Reset
+      </button>
+    </div>
+  </form>
+  <app-board *ngIf="showBoard" [boardValues]="board.Values"></app-board>
+</div>

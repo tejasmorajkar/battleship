@@ -74,4 +74,12 @@ export class GameComponent implements OnInit {
     this.board = this.gameEngine.board;
     this.resultService.initialize();
   }
+
+  onHideBoardClick(): void {
+    this.showBoard = false;
+  }
+
+  onShowBoardClick(): void {
+    this.showBoard = true;
+  }
 }

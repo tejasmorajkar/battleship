@@ -36,6 +36,12 @@
       <button type="reset" class="btn btn-space btn-warning mx-2" (click)="onResetClick()">
         Reset
       </button>
+      <button type="button" class="btn btn-space mx-2" (click)="onHideBoardClick()">
+        Hide Board
+      </button>
+      <button type="button" class="btn btn-space mx-2" (click)="onShowBoardClick()">
+        Show Board
+      </button>
     </div>
   </form>
   <app-board *ngIf="showBoard" [boardValues]="board.Values"></app-board>

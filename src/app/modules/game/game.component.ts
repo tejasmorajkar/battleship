@@ -52,8 +52,9 @@ export class GameComponent implements OnInit {
   }
 
   private convertToCoodinate(input: string): Coordinate {
-    const x = input.charCodeAt(0) - 65;
-    const y = input.charCodeAt(1) - 49;
+    debugger;
+    const x = input.charCodeAt(0) - 65; // Alphabet
+    const y = parseInt((input.match(/(\d+)/)[0]), 10) - 1; // Number
     return new Coordinate(x, y);
   }
 

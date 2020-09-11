@@ -1,5 +1,5 @@
 # Battleship
-This is app can be tested directly at https://tejasmorajkar.github.io/battleship/
+This app can be tested directly at https://tejasmorajkar.github.io/battleship/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
